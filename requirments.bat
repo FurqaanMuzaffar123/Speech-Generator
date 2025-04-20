@@ -1,3 +1,4 @@
+
 @echo off
 echo Checking for Python...
 where python
@@ -47,7 +48,21 @@ if %errorlevel% equ 0 (
     echo Ollama library is already installed.
 )
 
+echo Attempting to pull the llama2 model using Ollama...
+ollama pull llama2
+if %errorlevel% neq 0 (
+    echo Error pulling the llama2 model. Please ensure Ollama is installed and running correctly, and that you have internet access.
+    echo You might need to run 'ollama pull llama2' manually if this fails.
+) else (
+    echo llama2 model pulled successfully.
+)
+
+echo Attempting to start the Ollama server...
+start ollama serve
+echo Ollama server started in the background.
+
 echo All requirements checked and installed (if necessary).
+echo The llama2 model has been pulled, and the Ollama server has been started.
 echo You can now run your Python script.
 echo To run the script, open a command prompt in the script's directory and type:
 echo python main.py
