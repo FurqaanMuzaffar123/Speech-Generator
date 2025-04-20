@@ -63,7 +63,3 @@ Follow these steps to run the Speech Text Generation App:
 * Ensure you have pulled the `llama2` model in Ollama before running the application for the first time (`ollama pull llama2`).
 * The quality and relevance of the generated text depend on the Ollama model and the provided topic.
 * The word count is an approximation, and the generated paragraph might have slightly more or fewer words than specified.
-
-## License
-
-"No specific license"
